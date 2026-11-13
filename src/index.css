@@ -276,3 +276,12 @@ nav a:hover {
   color: #155724;
   border-radius: 6px;
 }
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: #c0392b;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
