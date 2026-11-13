@@ -277,6 +277,22 @@ nav a:hover {
   border-radius: 6px;
 }
 
+/* ---------- Search ---------- */
+.search-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.7rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.no-results {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   background-color: #c0392b;

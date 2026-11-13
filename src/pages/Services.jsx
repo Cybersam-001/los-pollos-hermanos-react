@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import MenuCard from '../components/MenuCard';
 
 const menuItems = [
@@ -26,13 +27,31 @@ const menuItems = [
 ];
 
 function Services() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredItems = menuItems.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
   return (
     <div className="page">
       <h1>Our Menu</h1>
       <p className="page-intro">Fresh food, made to order.</p>
 
+      <input
+        type="text"
+        className="search-box"
+        placeholder="Search the menu..."
+        value={searchTerm}
+        onChange={(event) => setSearchTerm(event.target.value)}
+      />
+
+      {filteredItems.length === 0 && (
+        <p className="no-results">No dishes match your search.</p>
+      )}
+
       <div className="menu-grid">
-        {menuItems.map((item) => (
+        {filteredItems.map((item) => (
           <MenuCard
             key={item.id}
             name={item.name}
